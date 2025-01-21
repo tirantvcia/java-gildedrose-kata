@@ -21,7 +21,7 @@ public class GildedRoseShould {
 
     @Test
     public void testThatQualityValueIsDecreased() {
-        Item whateverItem = new Item("whatever", 1, 10);
+        Item whateverItem = ItemFactory.create("whatever", 1, 10);
 
         GildedRose gildedRose = new GildedRose(arrayWith(whateverItem));
         gildedRose.updateQuality();
@@ -31,7 +31,7 @@ public class GildedRoseShould {
 
     @Test
     public void testThatQualityDecreasesTwiceAsMuchWhenSellByIsPassed() {
-        Item whateverItem = new Item("whatever", 0, 10);
+        Item whateverItem = ItemFactory.create("whatever", 0, 10);
 
         GildedRose gildedRose = new GildedRose(arrayWith(whateverItem));
         gildedRose.updateQuality();
@@ -41,7 +41,7 @@ public class GildedRoseShould {
 
     @Test
     public void testThatQualityIsNeverNegative() {
-        Item whateverItem = new Item("whatever", 0, 0);
+        Item whateverItem = ItemFactory.create("whatever", 0, 0);
 
         GildedRose gildedRose = new GildedRose(arrayWith(whateverItem));
         gildedRose.updateQuality();
@@ -51,7 +51,7 @@ public class GildedRoseShould {
 
     @Test
     public void testAgedBrieIncreasesQualityWithAge() {
-        Item agedBrie = new Item("Aged Brie", 5, 1);
+        Item agedBrie = ItemFactory.create("Aged Brie", 5, 1);
 
         GildedRose gildedRose = new GildedRose(arrayWith(agedBrie));
         gildedRose.updateQuality();
@@ -61,7 +61,7 @@ public class GildedRoseShould {
 
     @Test
     public void testQualityNeverIncreasesPastFifty() {
-        Item agedBrie = new Item("Aged Brie", 5, 50);
+        Item agedBrie = ItemFactory.create("Aged Brie", 5, 50);
 
         GildedRose gildedRose = new GildedRose(arrayWith(agedBrie));
         gildedRose.updateQuality();
@@ -71,7 +71,7 @@ public class GildedRoseShould {
 
     @Test
     public void testSulfurasNeverChanges() {
-        Item sulfuras = new Item("Sulfuras, Hand of Ragnaros", 0, 25);
+        Item sulfuras = ItemFactory.create("Sulfuras, Hand of Ragnaros", 0, 25);
 
         GildedRose gildedRose = new GildedRose(arrayWith(sulfuras));
         gildedRose.updateQuality();
