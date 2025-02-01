@@ -11,6 +11,10 @@ public class ItemFactory {
             if("whatever".equals(name)) {
                 return new ItemWhatever(name, sellIn, quality);
             }
-            return new Item(name, sellIn, quality);
+            if("Backstage passes to a TAFKAL80ETC concert".equals(name)) {
+                return new ItemBackstagePasses(name, sellIn, quality);
+            }
+        //"Conjured Mana Cake"
+        return new ItemDefault(name, sellIn, quality);
     }
 }

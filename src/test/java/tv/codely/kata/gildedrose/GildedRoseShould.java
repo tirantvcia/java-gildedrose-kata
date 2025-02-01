@@ -11,7 +11,7 @@ public class GildedRoseShould {
 
     @Test
     public void testThatSellInValueIsDecreased() {
-        Item whateverItem = new Item("whatever", 10, 0);
+        Item whateverItem = ItemFactory.create("whatever", 10, 0);
 
         GildedRose gildedRose = new GildedRose(arrayWith(whateverItem));
         gildedRose.updateQuality();
@@ -82,7 +82,7 @@ public class GildedRoseShould {
 
     @Test
     public void testBackstagePassIncreasesQualityByOneIfSellByGreaterThenTen() {
-        Item backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 20);
+        Item backstagePasses = ItemFactory.create("Backstage passes to a TAFKAL80ETC concert", 11, 20);
 
         GildedRose gildedRose = new GildedRose(arrayWith(backstagePasses));
         gildedRose.updateQuality();
@@ -92,7 +92,7 @@ public class GildedRoseShould {
 
     @Test
     public void testBackstagePassIncreasesQualityByTwoIfSellBySmallerThanTen() {
-        Item backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 6, 20);
+        Item backstagePasses = ItemFactory.create("Backstage passes to a TAFKAL80ETC concert", 6, 20);
 
         GildedRose gildedRose = new GildedRose(arrayWith(backstagePasses));
         gildedRose.updateQuality();
@@ -102,7 +102,7 @@ public class GildedRoseShould {
 
     @Test
     public void testBackstagePassIncreasesQualityByThreeIfSellBySmallerThanFive() {
-        Item backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20);
+        Item backstagePasses = ItemFactory.create("Backstage passes to a TAFKAL80ETC concert", 5, 20);
 
         GildedRose gildedRose = new GildedRose(arrayWith(backstagePasses));
         gildedRose.updateQuality();
@@ -112,7 +112,7 @@ public class GildedRoseShould {
 
     @Test
     public void testBackstagePassLosesValueAfterSellByPasses() {
-        Item backstagePasses = new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20);
+        Item backstagePasses = ItemFactory.create("Backstage passes to a TAFKAL80ETC concert", 0, 20);
 
         GildedRose gildedRose = new GildedRose(arrayWith(backstagePasses));
         gildedRose.updateQuality();
